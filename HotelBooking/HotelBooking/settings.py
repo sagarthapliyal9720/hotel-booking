@@ -137,6 +137,8 @@ CORS_ALLOWED_ORIGINS = [
     
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ["*", "hotel-booking-5-9w3p.onrender.com"]
+
 import os
 
 MEDIA_URL = '/media/'

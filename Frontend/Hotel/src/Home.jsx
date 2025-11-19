@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
+const API = import.meta.env.VITE_API_URL;
 function Home() {
   const [hotel,setHotel]=useState([])
 async function FetchHotel() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/hotel/"); 
+    const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/hotel/"); 
     const data = await response.json();                           
     setHotel(data);
     // console.log(data);
@@ -129,7 +130,7 @@ useEffect(() => {
        }}
   src={
     hotel.images && hotel.images.length > 0
-      ? `http://127.0.0.1:8000${hotel.images[0].img}`
+      ? `https://hotel-booking-5-9w3p.onrender.com${hotel.images[0].img}`
       : "https://via.placeholder.com/300x200?text=No+Image"
   }
   className="card-img-top"

@@ -11,7 +11,7 @@ function Rooms() {
   // ------------------- Fetch Rooms -------------------
   async function fetchRooms() {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/room/${id}/`);
+      const response = await fetch(`https://hotel-booking-5-9w3p.onrender.com/room/${id}/`);
       const data = await response.json();
       console.log("ROOM API RESPONSE:", data);
       setRooms(data);
@@ -49,7 +49,7 @@ function Rooms() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={`http://127.0.0.1:8000${hotel.images[slider].img}`}
+                src={`https://hotel-booking-5-9w3p.onrender.com${hotel.images[slider].img}`}
                 className="d-block w-100"
                 style={{ height: "450px", objectFit: "cover" }}
                 alt="Hotel"
@@ -74,7 +74,7 @@ function Rooms() {
                 
                 {/* Room Image */}
                 <img
-                  src={`http://127.0.0.1:8000${room.room_img}`}
+                  src={`https://hotel-booking-5-9w3p.onrender.com${room.room_img}`}
                   className="card-img-top"
                   style={{ height: "200px", objectFit: "cover" }}
                   alt="Room"

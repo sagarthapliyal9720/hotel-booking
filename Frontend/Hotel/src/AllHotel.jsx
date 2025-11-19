@@ -9,7 +9,7 @@ function AllHotel() {
 
   async function FetchHotels() {
     try {
-      const response = await fetch("http://127.0.0.1:8000/hotel/");
+      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/hotel/");
       const data = await response.json();
       setHotels(data);
       setFilterdata(data);
@@ -81,7 +81,7 @@ function AllHotel() {
                   <img
                     src={
                       hotel.images && hotel.images.length > 0
-                        ? `http://127.0.0.1:8000${hotel.images[0].img}`
+                        ? `https://hotel-booking-5-9w3p.onrender.com${hotel.images[0].img}`
                         : "https://via.placeholder.com/400x250?text=No+Image"
                     }
                     className="card-img-top"

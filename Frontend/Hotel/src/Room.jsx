@@ -69,35 +69,33 @@ function Rooms() {
           <h1>Available Rooms</h1>
 
           {rooms.map((room) => (
-            <div key={room.id} className="col-3 m-5 p-2">
-              <div className="card" style={{ width: "21rem" }}>
-                
-                {/* Room Image */}
-                <img
-                  src={`https://hotel-booking-5-9w3p.onrender.com${room.room_img}`}
-                  className="card-img-top"
-                  style={{ height: "200px", objectFit: "cover" }}
-                  alt="Room"
-                />
+          <div key={room.id} className="col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+  <div className="card h-100 w-100">
 
-                <div className="card-body">
-                  <p className="card-title">Room number:{room.room_number}</p>
-                  <h5 className="card-title">{room.room_type}</h5>
-                  <p className="card-text">
-                    Price: ₹{room.price_per_night}
-                  </p>
+    <img
+      src={`https://hotel-booking-5-9w3p.onrender.com${room.room_img}`}
+      className="card-img-top"
+      style={{ height: "200px", objectFit: "cover" }}
+      alt="Room"
+    />
 
-                  {/* FIXED LINK */}
-                  <Link
-                    to={`/room_booking/${room.id}`}
-                    state={{ room, hotel }}
-                    className="btn btn-primary w-100"
-                  >
-                    Book Room
-                  </Link>
-                </div>
-              </div>
-            </div>
+    <div className="card-body">
+      <p className="card-title">Room number: {room.room_number}</p>
+      <h5 className="card-title">{room.room_type}</h5>
+      <p className="card-text">Price: ₹{room.price_per_night}</p>
+
+      <Link
+        to={`/room_booking/${room.id}`}
+        state={{ room, hotel }}
+        className="btn btn-primary w-100"
+      >
+        Book Room
+      </Link>
+    </div>
+
+  </div>
+</div>
+
           ))}
 
         </div>

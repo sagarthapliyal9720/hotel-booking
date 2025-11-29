@@ -17,29 +17,36 @@ function Register() {
       [e.target.name]: e.target.value,
     });
   }
+async function handleSubmit(e) {
+  e.preventDefault();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  try {
+    const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/register/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-    try {
-      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/register/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-      console.log("Response:", data);
-
-      alert("🎉 User registered successfully!");
-      navigate("/login");
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong!");
+    if (!response.ok) {
+      const text = await response.text();
+      console.log("Server returned:", text);
+      alert("❌ Server error! Check console.");
+      return;
     }
+
+    const data = await response.json();
+    console.log("Response:", data);
+
+    alert("🎉 User registered successfully!");
+    navigate("/login");
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong!");
   }
+}
+
 
   return (
     <>

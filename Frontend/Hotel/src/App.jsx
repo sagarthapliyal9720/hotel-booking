@@ -7,6 +7,9 @@ import Register from './Register'
 import Login from './Login'
 import Home from './Home'
 import AllHotel from './AllHotel'
+import ForgotPassword from "./ForgotPassword";
+import VerifyOTP from "./VerifyOTP";
+import ResetPassword from "./ResetPassword";
 import { Routes, Route } from "react-router-dom";
 import Rooms from './Room'
 import RoomBooking from './RoomBooking'
@@ -28,6 +31,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
            <Route path="/MyBooking" element={<MyBooking/>} />
+           <Route path="/forgot" element={<ForgotPassword />} />
+          <Route path="/verify" element={<VerifyOTP />} />
+          <Route path="/reset" element={<ResetPassword />} />
       </Routes>
     </>
   )

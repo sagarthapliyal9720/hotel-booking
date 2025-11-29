@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Footer from "./footer";
 
 function Login() {
@@ -49,9 +49,7 @@ function Login() {
 
   return (
     <>
-      <div className="container d-flex justify-content-center align-items-center mt-5 mb-3" 
-      // style={{ minHeight: "80vh" }}
-      >
+      <div className="container d-flex justify-content-center align-items-center mt-5 mb-3">
         <div className="card shadow p-4" style={{ width: "400px" }}>
           <h3 className="text-center mb-3">Login</h3>
 
@@ -88,6 +86,12 @@ function Login() {
               Login
             </button>
           </form>
+
+          <div className="text-center mt-3">
+            <Link to="/forgot" className="text-primary">
+              Forgot Password?
+            </Link>
+          </div>
 
           {token && (
             <div className="alert alert-success mt-3">

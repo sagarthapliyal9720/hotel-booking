@@ -124,10 +124,11 @@ REST_FRAMEWORK = {
     )
 }
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    
+    "http://localhost:5173",  # React dev server
+    "https://sagarthapliyalhotelbooking.netlify.app",  # Deployed frontend
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_ALL_ORIGINS = False
 ALLOWED_HOSTS = ["*", "hotel-booking-5-9w3p.onrender.com"]
 
 import os

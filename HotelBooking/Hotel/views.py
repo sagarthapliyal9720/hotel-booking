@@ -93,3 +93,4 @@ class Hotel_img_view(APIView):
         img=Hotelimg.objects.filter(hotel=hotel)
         serializer=Hotel_img_serializer(img,many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+

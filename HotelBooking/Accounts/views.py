@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from .models import PasswordOTP
-
+from .serializers import Register_User
 # Create your views here.
 import random
 

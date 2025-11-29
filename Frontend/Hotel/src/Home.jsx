@@ -107,7 +107,7 @@ function Home() {
                 <img
                   src={
                     item.images && item.images.length > 0
-                      ? `https://hotel-booking-5-9w3p.onrender.com${item.images[0].img}`
+                      ? `http://127.0.0.1:8000/${item.images[0].img}`
                       : "https://via.placeholder.com/300x200?text=No+Image"
                   }
                   className="card-img-top img-fluid"

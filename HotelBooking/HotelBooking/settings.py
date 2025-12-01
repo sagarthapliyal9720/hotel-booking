@@ -123,25 +123,37 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
     "https://sagarthapliyalhotelbooking.netlify.app",
     "http://localhost:5173",
 ]
-
-CORS_ALLOW_CREDENTIALS = True
-
+    
 CORS_ALLOW_HEADERS = [
     "content-type",
     "authorization",
     "accept",
     "origin",
 ]
-ALLOWED_HOSTS = [
-    "hotel-booking-5-9w3p.onrender.com",
-    "127.0.0.1",
-    "localhost",
-]
 
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "origin",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 
 import os

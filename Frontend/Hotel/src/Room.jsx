@@ -48,13 +48,13 @@ function Rooms() {
         <div id="carouselExampleCaptions" className="carousel slide m-2">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img
-                src={`https://hotel-booking-4-v2we.onrender.com${hotel.images[slider].img}`}
+             <img
+                  src={`https://hotel-booking-5-9w3p.onrender.com${hotel.images[slider].img}`}
+                  className="d-block w-100"
+                  style={{ height: "450px", objectFit: "cover" }}
+                  alt="Hotel"
+                />
 
-                className="d-block w-100"
-                style={{ height: "450px", objectFit: "cover" }}
-                alt="Hotel"
-              />
             </div>
           </div>
         </div>

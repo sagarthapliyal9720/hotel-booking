@@ -108,7 +108,8 @@ function Home() {
                 <img
                  src={
   item.images && item.images.length > 0
-    ? `https://hotel-booking-4-v2we.onrender.com${item.images[0].img}`
+    ? `https://hotel-booking-4-v2we.onrender.com${item.images
+[0].img}`
   
     : "https://via.placeholder.com/300x200?text=No+Image"
 }

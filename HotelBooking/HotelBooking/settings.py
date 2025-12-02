@@ -14,7 +14,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-+k%ro1w!8=@-04z-8g^)039r5-8*g1x(xo@tz9ui3a-(f5s7b7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -125,17 +125,22 @@ REST_FRAMEWORK = {
 }
 CORS_ALLOW_ALL_ORIGINS = False
 
+
 CORS_ALLOWED_ORIGINS = [
     "https://sagarthapliyalhotelbooking.netlify.app",
-    "http://localhost:5173",
+    "https://hotel-booking-4-v2we.onrender.com",
 ]
-    
-CORS_ALLOW_HEADERS = [
-    "content-type",
-    "authorization",
-    "accept",
-    "origin",
+
+ALLOWED_HOSTS = [
+    'hotel-booking-4-v2we.onrender.com',
+    'sagarthapliyalhotelbooking.netlify.app',
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
 ]
+ 
+
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_METHODS = [
     "GET",

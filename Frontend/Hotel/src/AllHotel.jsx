@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
-
+import BASE_URL from "./api";
 function AllHotel() {
   const [hotels, setHotels] = useState([]);
   const [filterdata, setFilterdata] = useState([]);
@@ -9,7 +9,8 @@ function AllHotel() {
 
   async function FetchHotels() {
     try {
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/hotel/");
+     const response = await fetch(`${BASE_URL}/hotel/`);
+
       const data = await response.json();
       setHotels(data);
       setFilterdata(data);
@@ -81,7 +82,7 @@ function AllHotel() {
                   <img
                     src={
                       hotel.images && hotel.images.length > 0
-                        ? `https://hotel-booking-4-v2we.onrender.com${hotel.images[0].img}`
+                        ? `${BASE_URL}/${hotel.images[0].img}`
                         : "https://via.placeholder.com/400x250?text=No+Image"
                     }
                     className="card-img-top"

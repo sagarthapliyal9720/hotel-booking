@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "./api";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ function ForgotPassword() {
     setMessage("");
 
     try {
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/forgot-password/", {
+      const response = await fetch(`${BASE_URL}/forgot-password/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

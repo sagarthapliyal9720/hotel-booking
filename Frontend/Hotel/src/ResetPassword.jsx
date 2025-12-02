@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import BASE_URL from "./api";
 function ResetPassword() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -15,7 +15,7 @@ function ResetPassword() {
     setMessage("");
 
     try {
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/reset-password/", {
+      const response = await fetch(`${BASE_URL}/reset-password/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, new_password: password }),

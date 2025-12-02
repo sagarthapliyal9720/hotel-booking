@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import Footer from "./footer";
+import BASE_URL from "./api";
 function Rooms() {
   const [slider, setSlider] = useState(0);
   const [rooms, setRooms] = useState([]);
@@ -11,7 +12,7 @@ function Rooms() {
   // ------------------- Fetch Rooms -------------------
   async function fetchRooms() {
     try {
-      const response = await fetch(`https://hotel-booking-5-9w3p.onrender.com/room/${id}/`);
+      const response = await fetch(`${BASE_URL}/room/${id}/`);
       const data = await response.json();
       console.log("ROOM API RESPONSE:", data);
       setRooms(data);
@@ -49,7 +50,7 @@ function Rooms() {
           <div className="carousel-inner">
             <div className="carousel-item active">
              <img
-                  src={`https://hotel-booking-5-9w3p.onrender.com${hotel.images[slider].img}`}
+                  src={`${BASE_URL}${hotel.images[slider].img}`}
                   className="d-block w-100"
                   style={{ height: "450px", objectFit: "cover" }}
                   alt="Hotel"
@@ -74,7 +75,7 @@ function Rooms() {
   <div className="card h-100 w-100">
 
     <img
-      src={`https://hotel-booking-5-9w3p.onrender.com${room.room_img}`}
+      src={`${BASE_URL}${room.room_img}`}
       className="card-img-top"
       style={{ height: "200px", objectFit: "cover" }}
       alt="Room"

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import BASE_URL from "./api";
 function MyBooking() {
   const [bookings, setBookings] = useState([]);
 
   async function FetchingBooking() {
     try {
       const token = localStorage.getItem("access_token");
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/mybooking/", {
+      const response = await fetch(`${BASE_URL}/mybooking/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

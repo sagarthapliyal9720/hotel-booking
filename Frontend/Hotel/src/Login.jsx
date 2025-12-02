@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Footer from "./footer";
-
+import BASE_URL from "./api";
 function Login() {
   const [formData, setFormData] = useState({
     username: "",
@@ -24,7 +24,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/api/token/", {
+      const response = await fetch(`${BASE_URL}/api/token/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

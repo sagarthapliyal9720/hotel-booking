@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
-
+import BASE_URL from "./api";
 function RoomBooking() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,7 +28,7 @@ function RoomBooking() {
     try {
       const token = localStorage.getItem("access_token");
 
-      const response = await fetch(`https://hotel-booking-4-v2we.onrender.com/booking/${id}/`, {
+      const response = await fetch(`${BASE_URL}/booking/${id}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

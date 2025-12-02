@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
-
+import BASE_URL from "./api";
 function Home() {
   const [hotel, setHotel] = useState([]);
 
   async function FetchHotel() {
     try {
-      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/hotel/");
+      const response = await fetch(`${BASE_URL}/hotel`);
       const data = await response.json();
       setHotel(data);
+      console.log(data)
     } catch (error) {
       console.log("Error fetching hotels", error);
     }
@@ -105,11 +106,12 @@ function Home() {
               <div className="card h-100 shadow-sm">
 
                 <img
-                  src={
-                    item.images && item.images.length > 0
-                      ? `https://hotel-booking-4-v2we.onrender.com/media/${item.images[0].img}`
-                      : "https://via.placeholder.com/300x200?text=No+Image"
-                  }
+                 src={
+  item.images && item.images.length > 0
+    ? `${BASE_URL}${item.images[0].img}`
+    : "https://via.placeholder.com/300x200?text=No+Image"
+}
+
                   className="card-img-top img-fluid"
                   style={{ padding: "5px", height: "200px", objectFit: "cover" }}
                   alt={item.name}

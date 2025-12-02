@@ -7,7 +7,7 @@ function Home() {
 
   async function FetchHotel() {
     try {
-      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/hotel/");
+      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/hotel/");
       const data = await response.json();
       setHotel(data);
     } catch (error) {
@@ -107,7 +107,7 @@ function Home() {
                 <img
                   src={
                     item.images && item.images.length > 0
-                      ? `http://127.0.0.1:8000/${item.images[0].img}`
+                      ? `https://hotel-booking-4-v2we.onrender.com/${item.images[0].img}`
                       : "https://via.placeholder.com/300x200?text=No+Image"
                   }
                   className="card-img-top img-fluid"

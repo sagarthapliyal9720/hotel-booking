@@ -6,7 +6,7 @@ function MyBooking() {
   async function FetchingBooking() {
     try {
       const token = localStorage.getItem("access_token");
-      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/mybooking/", {
+      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/mybooking/", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

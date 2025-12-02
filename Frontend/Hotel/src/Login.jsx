@@ -24,7 +24,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/api/token/", {
+      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/api/token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

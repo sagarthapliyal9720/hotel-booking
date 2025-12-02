@@ -28,7 +28,7 @@ function RoomBooking() {
     try {
       const token = localStorage.getItem("access_token");
 
-      const response = await fetch(`https://hotel-booking-5-9w3p.onrender.com/booking/${id}/`, {
+      const response = await fetch(`https://hotel-booking-4-v2we.onrender.com/booking/${id}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

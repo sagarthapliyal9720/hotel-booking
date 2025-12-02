@@ -21,7 +21,7 @@ async function handleSubmit(e) {
   e.preventDefault();
 
   try {
-    const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/register/", {
+    const response = await fetch("https://hotel-booking-4-v2we.onrender.com/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -16,7 +16,7 @@ function VerifyOTP() {
     setMessage("");
 
     try {
-      const response = await fetch("https://hotel-booking-5-9w3p.onrender.com/verify-otp/", {
+      const response = await fetch("https://hotel-booking-4-v2we.onrender.com/verify-otp/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),

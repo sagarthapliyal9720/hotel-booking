@@ -9,9 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # == SECURITY ==
 SECRET_KEY = 'django-insecure-+k%ro1w!8=@-04z-8g^)039r5-8*g1x(xo@tz9ui3a-(f5s7b7'
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
     "hotel-booking-4-v2we.onrender.com",
     "sagarthapliyalhotelbooking.netlify.app"
 ]
@@ -89,6 +91,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # == CORS ==
 CORS_ALLOWED_ORIGINS = [
     "https://sagarthapliyalhotelbooking.netlify.app",
+     "http://localhost:5173",
 ]
 
 # == JWT ==

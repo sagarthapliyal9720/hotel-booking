@@ -14,6 +14,7 @@ function AllHotel() {
       const data = await response.json();
       setHotels(data);
       setFilterdata(data);
+      console.log(data)
     } catch (error) {
       console.error("Error fetching hotels:", error);
     }
@@ -82,7 +83,7 @@ function AllHotel() {
                   <img
                     src={
                       hotel.images && hotel.images.length > 0
-                        ? `${BASE_URL}/${hotel.images[0].img}`
+                        ? `${BASE_URL}${hotel.images[0].img}`
                         : "https://via.placeholder.com/400x250?text=No+Image"
                     }
                     className="card-img-top"
